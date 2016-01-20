@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payments</title>
+</head>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
+<div ng-app="paymentsApp" class="application">
+    <div class="title-bar">
+        <h1 id="paymentsApp-title">Payments-o-matic</h1>
+    </div>
+    <div class="container" ng-controller="PaymentsController">
+        <div class="list">
+            <div ng-repeat="payment in payments" id="paymentsApp-list-{{$index}}">
+                <div>{{payment.counterparty}}</div>
+                <div>{{payment.valueDate}}</div>
+            </div>
+        </div>
+        <div class="ng-hide">
+            <button id="paymentsApp-btn-new">Create new payment</button>
+        </div>
+        <div class="details" id="paymentsApp-detailsForm">
+            <div>
+                <div>
+                    <label>Counterparty</label>
+                    <input disabled id="paymentsApp-inpt-cpty" />
+                </div>
+                <div>
+                    <label>Value Date</label>
+                    <input disabled id="paymentsApp-inpt-date" />
+                </div>
+                <div>
+                    <label>Credit Account</label>
+                    <input disabled id="paymentsApp-inpt-acc" />
+                </div>
+                <div>
+                    <label>Amount</label>
+                    <input disabled id="paymentsApp-inpt-amt" />
+                </div>
+                <div>
+                    <label>Currency</label>
+                    <input disabled id="paymentsApp-inpt-cur" />
+                </div>
+                <div>
+                    <button class="ng-hide" id="paymentsApp-btn-save">Save</button>
+                    <button id="paymentsApp-btn-cancel">Cancel</button>
+                    <button class="ng-hide" id="paymentsApp-btn-delete">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
